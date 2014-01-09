@@ -1,0 +1,16 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Honeycomb.CellPair"
+	x:Name="UserControl" Height="137" Width="80">
+
+	<Canvas x:Name="LayoutRoot" Margin="0,0,558,352">
+		<Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Stroke="Black" VerticalAlignment="Top" Width="80" Canvas.Top="-12"/>
+		<Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80" Stroke="Black" VerticalAlignment="Top" Width="80" Canvas.Left="40" Canvas.Top="56"/>
+		<ContentPresenter Height="44" Width="58" Canvas.Left="10" Canvas.Top="7" Content="{Binding First}"/>
+		<ContentPresenter Height="44" Width="60" Canvas.Left="51" Canvas.Top="73" Content="{Binding Second}"/>
+	</Canvas>
+</UserControl>

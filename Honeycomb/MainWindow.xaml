@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Honeycomb" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Honeycomb.MainWindow"
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="{StaticResource ViewModel}">
+	<Window.Resources>
+		<local:PairConverter x:Key="PairConverter"/>
+		<ItemsPanelTemplate x:Key="HoneycombItemsPanel">
+			<WrapPanel IsItemsHost="True"/>
+		</ItemsPanelTemplate>
+		<DataTemplate x:Key="HoneycombDateTemplate">
+			<Grid>
+				<local:CellPair HorizontalAlignment="Left" VerticalAlignment="Top"/>
+			</Grid>
+		</DataTemplate>
+	</Window.Resources>
+	<Grid>
+		<ItemsControl ItemsPanel="{DynamicResource HoneycombItemsPanel}" ItemTemplate="{DynamicResource HoneycombDateTemplate}" ItemsSource="{Binding Cells, Converter={StaticResource PairConverter}}">
+		</ItemsControl>
+        
+	</Grid>
+</Window>
